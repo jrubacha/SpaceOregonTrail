@@ -55,6 +55,8 @@ class SpaceCraft {
 	}
 	
 	public class SaturnV extends SpaceCraft {
-
+		public SaturnV() {
+			super("Saturn V", 160, "Fair", "Big", 7, 3, 0, 20);
+		}
 	}
 }
