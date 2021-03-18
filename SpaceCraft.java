@@ -1,5 +1,5 @@
 class SpaceCraft {
-	private String name, quality, size, occupation;
+	private String name, quality, size;
 	private int health, speed, navQual, age, capacity, cost;
 	UserInterface ui = new UserInterface();
 
@@ -52,5 +52,9 @@ class SpaceCraft {
 		ui.println("Condition: " + quality);
 		ui.println("Speed: " + speed);
 		ui.println("= = = = = = = = =");
+	}
+	
+	public class SaturnV extends SpaceCraft {
+
 	}
 }

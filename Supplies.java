@@ -51,4 +51,12 @@ class Supplies {
 			ui.println(suppliesArray[i] + " " + suppliesNames[i]);
 		}
 	}
+
+	public class Food extends Supplies {
+
+	}
+
+	public class Water extends Supplies {
+		
+	}
 }
