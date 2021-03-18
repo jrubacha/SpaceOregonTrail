@@ -7,6 +7,14 @@ class UserInterface {
 	}
 
 	public void print(String word) {
+		System.out.print(word);
+	}
+
+	public void println(String word) {
 		System.out.println(word);
 	}
+
+	// public void printpad(String word) {
+	// 	String.format("|%2s|", word);
+	// }
 }
