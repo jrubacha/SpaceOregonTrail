@@ -17,8 +17,10 @@ class Main {
 
 		// Start up game
 		text.printGameGreetings();
-		String captainName = keyboard.next();
+		String captainName = "Captain " + keyboard.next();
 		text.printWelcomeMessage(captainName);
+		text.pressEnter();
+		ui.clear();
 
 
 		// Give Space Craft options
@@ -27,8 +29,9 @@ class Main {
 		int userChoice2 = 0;
 
 		// Buy Space Craft
-		SpaceCraft firstCraft = text.getCraft(userChoice);
+		SpaceCraft firstCraft = text.getCraft(userChoice); // terrible locations for that method
 		userChoice = 0; // reset userChoice
+		ui.clear();
 
 		// Hire Crew
 		text.printCrewPrompt();
@@ -57,8 +60,12 @@ class Main {
 			canHire -= userChoice2;
 		}
 		crew1.printCrewList();
+		text.pressEnter();
 
 		// Initial Supply Purchase
+		text.printFirstSupplyPurchase();
+		text.purchaseFoodDialogue();
+		food = new Supplies.Food(Supplies.Food.foodRationSize.FILLING, keyboard.nextInt());
 
 
 

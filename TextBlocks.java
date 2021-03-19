@@ -1,6 +1,7 @@
+import java.util.*;
 class TextBlocks {
 	UserInterface ui = new UserInterface();
-
+	Scanner keyboard = new Scanner(System.in);
 
 	// name, shipAge, shipSpeed, shipQual, navQual, capacity, cost, health
 	SpaceCraft saturnV = new SpaceCraft("Saturn V", SpaceCraft.shipAge.VERY_OLD, SpaceCraft.shipSpeed.SLOW, SpaceCraft.shipQuality.POOR, SpaceCraft.navigationQuality.POOR, 3, 0, 10);
@@ -47,7 +48,7 @@ class TextBlocks {
 	}
 
 	public void printWelcomeMessage(String name){
-		ui.println("\n\nWelcome Captain " + name + "!\n\nIt’s time for you to make your first voyage to the Jupiter Colony Station. You will need to make many important decisions before leaving Earth, so read carefully.\n\nThere are multiple stages to this journey. Your first steps are to select your ship and crew.\n\nChoose wisely, some of these flight vehicles are meant for short voyages only and others are suitable for long hauls.\n\nYou can also stock up on provisions before leaving. Make sure to budget carefully. It’s a long trip.\n\n= = = = = = = = =");
+		ui.println("\n\nWelcome " + name + "!\n\nIt’s time for you to make your first voyage to the Jupiter Colony Station. You will need to make many important decisions before leaving Earth, so read carefully.\n\nThere are multiple stages to this journey. Your first steps are to select your ship and crew.\n\nChoose wisely, some of these flight vehicles are meant for short voyages only and others are suitable for long hauls.\n\nYou can also stock up on provisions before leaving. Make sure to budget carefully. It’s a long trip.\n\n= = = = = = = = =");
 	}
 
 	public void printCrewPrompt() {
@@ -59,7 +60,8 @@ class TextBlocks {
 	}
 
 	public void printLaunchIntro() {
-		ui.println("\nThanks for assembling your crew. They'll be ready for you when you take off. Your launch window is two weeks long. The weather forecast will be provided for you on each day.");
+		ui.println("\nThanks for assembling your crew and supplies. They'll be ready for you when you take off. Your launch window is two weeks long. The weather forecast will be provided for you on each day.\nNote that adverse weather conditions could provide hazordous to the launch.");
+		pressEnter();
 	}
 
 	public void printLaunchForecast(int counter){
@@ -95,5 +97,18 @@ class TextBlocks {
 
 	public void printStatus() {
 		
+	}
+
+	public void printFirstSupplyPurchase() {
+		ui.println("Now that you have a ship and a crew, you need to stock up for your journey. You'll need to have an adequate supply of food, water, fuel, space suits, and spare parts.\n\nLet's start by purchasing some food.");
+	}
+
+	public void purchaseFoodDialogue() {
+		ui.print("The average person eats 0.5 pounds a food a day.\n\nHow many pounds of food would you like? ");
+	}
+
+	public void pressEnter(){
+		ui.print("\n< Press ENTER to continue >");
+		keyboard.nextLine();
 	}
 }
