@@ -1,6 +1,5 @@
 import java.util.*;
 
-
 class Main {
   public static void main(String[] args) {
     UserInterface ui = new UserInterface();
@@ -10,10 +9,19 @@ class Main {
 		Scanner keyboard = new Scanner(System.in);
 		Supplies supplies = new Supplies();
 		Supplies.Food food;
+		Supplies.Fuel fuel;
+		Supplies.Water water;
+		Supplies.SpaceSuits spacesuits;
+		Supplies.SpareParts spareparts;
 		
+
+		// Start up game
 		text.printGameGreetings();
 		String captainName = keyboard.next();
 		text.printWelcomeMessage(captainName);
+
+
+		// Give Space Craft options
 		text.printAllCraftSpecs();
 		int userChoice = keyboard.nextInt();
 		int userChoice2 = 0;
@@ -50,6 +58,11 @@ class Main {
 		}
 		crew1.printCrewList();
 
+		// Initial Supply Purchase
+
+
+
+		// Launch Sequence
 		userChoice = 0;
 		int launchCounter = 1;
 		text.printLaunchIntro();
@@ -81,24 +94,7 @@ class Main {
 		userChoice2 = 0;
 		boolean isAlive = true;	// player state
 
-		// Test of buy food and water
-		ui.print("Buy food? 1.y 2.n");
-		userChoice = keyboard.nextInt();
-		if (userChoice == 1) {
-			ui.print("how much? ");
-			userChoice2 = keyboard.nextInt();
-		} else {
-			ui.println("you did not buy food. you will die.");
-		}
-		food = new Supplies.Food(Supplies.Food.foodRationSize.FILLING, userChoice2);
-		ui.println("food is" + food.checkFoodRationSize());
 
-		supplies.increaseSupplyOf(food, 25);
-		ui.println("\n\n\nYo.\n\n" + food.checkFoodSupply() + "\n\n\n");
-
-		food.changeRationSize(Supplies.Food.foodRationSize.BARE_BONES);
-		ui.println("food is" + food.checkFoodRationSize());
-		//supplies.printSuppliesQuantities();
 
   }
 }
