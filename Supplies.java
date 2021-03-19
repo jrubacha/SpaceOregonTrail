@@ -13,13 +13,29 @@ class Supplies {
 		SPACE_SUITS
 	}
 
-	public void increaseSupplyOf(Object supplyType, int amount) {
+	public void purchaseSupplyOf(Object supplyType, int amount) {
 		if (supplyType instanceof Food) {
 			Food.buyFood(amount);
 		} else if (supplyType instanceof Water) {
 			Water.buyWater(amount);
 		} else if (supplyType instanceof Fuel) {
 			Fuel.buyFuel(amount);
+		} else if (supplyType instanceof SpaceSuits) {
+
+		} else if (supplyType instanceof SpareParts) {
+
+		} else {
+			ui.println("***ERROR: Supplies.increaseSupplyOf***");
+		}
+	}
+
+	public void sellSupplyOf(Object supplyType, int amount) {
+		if (supplyType instanceof Food) {
+			Food.sellFood(amount);
+		} else if (supplyType instanceof Water) {
+			Water.sellWater(amount);
+		} else if (supplyType instanceof Fuel) {
+			Fuel.sellFuel(amount);
 		} else if (supplyType instanceof SpaceSuits) {
 
 		} else if (supplyType instanceof SpareParts) {
@@ -67,7 +83,7 @@ class Supplies {
 		public static void buyFood(int newFood) {
 			foodQuantity = foodQuantity + newFood;
 		}
-		public void sellFood(int removeFood) {
+		public static void sellFood(int removeFood) {
 			foodQuantity = foodQuantity - removeFood;
 		}
 		public void changeRationSize(foodRationSize rationSize) {
@@ -97,7 +113,7 @@ class Supplies {
 		public static void buyWater(int newWater) {
 			waterQuantity += newWater;
 		}
-		public void sellWater(int removeFood) {
+		public static void sellWater(int removeFood) {
 			waterQuantity -= removeFood;
 		}
 		public void changeRationSize(waterRationSize rationSize) {
@@ -127,7 +143,7 @@ class Supplies {
 		public static void buyFuel(int newFuel) {
 			fuelQuantity += newFuel;
 		}
-		public void sellFuel(int newFuel) {
+		public static void sellFuel(int newFuel) {
 			fuelQuantity -= newFuel;
 		}
 		public int checkFuelSupply(){
