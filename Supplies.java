@@ -25,7 +25,7 @@ class Supplies {
 		} else if (supplyType instanceof SpareParts) {
 
 		} else {
-			ui.println("***ERROR: Supplies.increaseSupplyOf***");
+			ui.println("***ERROR: Supplies.buySupplyOf***");
 		}
 	}
 
@@ -41,7 +41,7 @@ class Supplies {
 		} else if (supplyType instanceof SpareParts) {
 
 		} else {
-			ui.println("***ERROR: Supplies.increaseSupplyOf***");
+			ui.println("***ERROR: Supplies.sellSupplyOf***");
 		}
 	}
 
@@ -65,6 +65,17 @@ class Supplies {
 	public void printSuppliesQuantities() {
 		for(int i=0; i<suppliesArray.length; i++) {
 			ui.println(suppliesArray[i] + " " + suppliesNames[i]);
+		}
+	}
+
+	public static class Money extends Supplies {
+		static int amountOfMoney;
+		public Money() {
+			Supplies.Money.amountOfMoney = 0;
+		}
+
+		public static void buySupplyOf(Object supplyType, int amountDesired) {
+			
 		}
 	}
 
