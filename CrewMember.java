@@ -1,11 +1,20 @@
 class CrewMember {
-	private String name, occupation;
+	private String name;
 	private int age, health;
-	
-	public CrewMember(String name, int age, String occupation) {
+	occupation job;
+
+	public static enum occupation {
+		ENGINEER,
+		SCIENTIST,
+		COMMUNICATIONS_OFFICER,
+		PILOT,
+		CAPTAIN
+	}
+
+	public CrewMember(String name, int age, occupation job) {
 		this.name = name;
 		this.age = age;
-		this.occupation = occupation;
+		this.job = job;
 
 		// Starting Health values. Based on age only.
 		if (age > 90) {
@@ -26,8 +35,8 @@ class CrewMember {
 	public int getAge() {
 		return age;
 	}
-	public String getOccupation() {
-		return occupation;
+	public occupation getOccupation() {
+		return job;
 	}
 	public int getHealth() {
 		return health;

@@ -1,11 +1,13 @@
 class TextBlocks {
 	UserInterface ui = new UserInterface();
 
-	SpaceCraft saturnV = new SpaceCraft("Saturn V", 160, "Fair", "Large", 20, 3, 10000, 65);
-	SpaceCraft atlas = new SpaceCraft("Atlas Falcon", 125, "Fair", "Medium", 40, 4, 15000, 75);
-	SpaceCraft shepard = new SpaceCraft("New Shepard XC", 90, "Good", "Small", 75, 6, 30000, 90);
-	SpaceCraft artemis = new SpaceCraft("Artemis N", 30, "Great", "Small", 85, 10, 50000, 100);
-	SpaceCraft orion = new SpaceCraft("New Orion", 10, "Outstanding", "Medium", 100, 12, 100000, 100);
+
+	// name, shipAge, shipSpeed, shipQual, navQual, capacity, cost, health
+	SpaceCraft saturnV = new SpaceCraft("Saturn V", SpaceCraft.shipAge.VERY_OLD, SpaceCraft.shipSpeed.SLOW, SpaceCraft.shipQuality.POOR, SpaceCraft.navigationQuality.POOR, 3, 0, 10);
+	SpaceCraft atlas = new SpaceCraft("Atlas", SpaceCraft.shipAge.OLD, SpaceCraft.shipSpeed.SLOW, SpaceCraft.shipQuality.POOR, SpaceCraft.navigationQuality.POOR, 4, 0, 10);
+	SpaceCraft shepard = new SpaceCraft("New Shepard XC", SpaceCraft.shipAge.AVERAGE, SpaceCraft.shipSpeed.AVERAGE, SpaceCraft.shipQuality.AVERAGE, SpaceCraft.navigationQuality.AVERAGE, 6, 0, 10);
+	SpaceCraft artemis = new SpaceCraft("Artemis N", SpaceCraft.shipAge.NEW, SpaceCraft.shipSpeed.FAST, SpaceCraft.shipQuality.AVERAGE, SpaceCraft.navigationQuality.AVERAGE, 10, 0, 10);
+	SpaceCraft orion = new SpaceCraft("New Orion", SpaceCraft.shipAge.NEW, SpaceCraft.shipSpeed.FAST, SpaceCraft.shipQuality.OUTSTANDING, SpaceCraft.navigationQuality.OUTSTANDING, 12, 0, 10);
 	SpaceCraft[] earthCraft = {saturnV, atlas, shepard, artemis, orion};
 
 	public void printAllCraftSpecs(){

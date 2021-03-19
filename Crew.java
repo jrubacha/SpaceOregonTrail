@@ -35,7 +35,7 @@ class Crew {
 		ui.println("Please type in your crewmates' names.");
 		for(int i=0; i<capacity; i++) {
 			crewName = keyboard.next();
-			CrewMember person = new CrewMember(crewName, 45, "welder");
+			CrewMember person = new CrewMember(crewName, 45, CrewMember.occupation.ENGINEER);
 			crewList.add(person);
 		}
 	}

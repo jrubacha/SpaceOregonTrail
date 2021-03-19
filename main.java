@@ -9,6 +9,7 @@ class Main {
 		Weather weather = new Weather();
 		Scanner keyboard = new Scanner(System.in);
 		Supplies supplies = new Supplies();
+		Supplies.Food food;
 		
 		text.printGameGreetings();
 		String captainName = keyboard.next();
@@ -80,35 +81,24 @@ class Main {
 		userChoice2 = 0;
 		boolean isAlive = true;	// player state
 
-		supplies.printSuppliesQuantities();
-
-		while (daysCounter < 5 && isAlive) {
-			text.printStandardMenuOptions(daysCounter);
-			daysCounter++;
-			userChoice = keyboard.nextInt();
-			switch (userChoice) {
-				case 1:
-					break;
-				case 2:
-					supplies.printSuppliesQuantities();
-					break;
-				case 3:
-					break;
-				case 4:
-					
-					break;
-				case 5:
-					break;
-				case 6:
-					break;
-				case 7:
-					break;
-				default:
-					break;
-			}
+		// Test of buy food and water
+		ui.print("Buy food? 1.y 2.n");
+		userChoice = keyboard.nextInt();
+		if (userChoice == 1) {
+			ui.print("how much? ");
+			userChoice2 = keyboard.nextInt();
+		} else {
+			ui.println("you did not buy food. you will die.");
 		}
+		food = new Supplies.Food(Supplies.Food.foodRationSize.FILLING, userChoice2);
+		ui.println("food is" + food.checkFoodRationSize());
 
+		supplies.increaseSupplyOf(food, 25);
+		ui.println("\n\n\nYo.\n\n" + food.checkFoodSupply() + "\n\n\n");
 
-		//crew1.createCrew(firstCraft.getCapacity());
+		food.changeRationSize(Supplies.Food.foodRationSize.BARE_BONES);
+		ui.println("food is" + food.checkFoodRationSize());
+		//supplies.printSuppliesQuantities();
+
   }
 }

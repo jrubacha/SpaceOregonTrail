@@ -1,19 +1,48 @@
 class SpaceCraft {
-	private String name, quality, size;
-	private int health, speed, navQual, age, capacity, cost;
+	private String name;
+	private int health, capacity, cost;
 	UserInterface ui = new UserInterface();
+	navigationQuality navQual;
+	shipQuality shipQual;
+	shipAge age;
+	shipSpeed speed;
 
-	public SpaceCraft(String name, int age, String quality, String size, int navQual, int capacity, int cost, int health) {
+	public static enum shipSpeed {
+		SLOW,
+		AVERAGE,
+		FAST
+	}
+	public static enum navigationQuality {
+		POOR,
+		AVERAGE,
+		OUTSTANDING
+	}
+	public static enum shipQuality {
+		POOR,
+		AVERAGE,
+		OUTSTANDING
+	}
+	public static enum shipAge {
+		VERY_OLD,
+		OLD,
+		AVERAGE,
+		NEW
+	}
+
+	public SpaceCraft(String name, shipAge age, shipSpeed speed, shipQuality shipQual, navigationQuality navQual, int capacity, int cost, int health) {
 		this.name = name;
-		this.size = size;
-		this.quality = quality;
+		this.age = age;
+		this.speed = speed;
+		this.shipQual = shipQual;
 		this.navQual = navQual;
 		this.capacity = capacity;
+		this.cost = cost;
+		this.health = health;
 	}
 	public String getName() {
 		return name;
 	}
-	public int getAge() {
+	public shipAge getAge() {
 		return age;
 	}
 	public int getHealth() {
@@ -23,25 +52,19 @@ class SpaceCraft {
 		health = health + modVal;
 		return health;
 	}
-	public String getQuality() {
-		return quality;
+	public shipQuality getQuality() {
+		return shipQual;
 	}
-	public String getSize() {
-		return size;
-	}
-	public int getSpeed(){
+	public shipSpeed getSpeed(){
 		return speed;
 	}
-
 	public int getCost(){
 		return cost;
 	}
-
 	public int getCapacity(){
 		return capacity;
 	}
-
-	public int getNavQual() {
+	public navigationQuality getNavQual() {
 		return navQual;
 	}
 
@@ -49,14 +72,8 @@ class SpaceCraft {
 		ui.println(name);
 		ui.println("Cost: " + cost);
 		ui.println("Capacity: " + capacity);
-		ui.println("Condition: " + quality);
+		ui.println("Condition: " + shipQual);
 		ui.println("Speed: " + speed);
 		ui.println("= = = = = = = = =");
-	}
-	
-	public class SaturnV extends SpaceCraft {
-		public SaturnV() {
-			super("Saturn V", 160, "Fair", "Big", 7, 3, 0, 20);
-		}
 	}
 }
