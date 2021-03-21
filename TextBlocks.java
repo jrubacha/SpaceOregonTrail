@@ -1,14 +1,15 @@
 import java.util.*;
+
 class TextBlocks {
 	UserInterface ui = new UserInterface();
 	Scanner keyboard = new Scanner(System.in);
 
-	// name, shipAge, shipSpeed, shipQual, navQual, capacity, cost, health
-	SpaceCraft saturnV = new SpaceCraft("Saturn V", SpaceCraft.shipAge.VERY_OLD, SpaceCraft.shipSpeed.SLOW, SpaceCraft.shipQuality.POOR, SpaceCraft.navigationQuality.POOR, 3, 0, 10);
-	SpaceCraft atlas = new SpaceCraft("Atlas", SpaceCraft.shipAge.OLD, SpaceCraft.shipSpeed.SLOW, SpaceCraft.shipQuality.POOR, SpaceCraft.navigationQuality.POOR, 4, 0, 10);
-	SpaceCraft shepard = new SpaceCraft("New Shepard XC", SpaceCraft.shipAge.AVERAGE, SpaceCraft.shipSpeed.AVERAGE, SpaceCraft.shipQuality.AVERAGE, SpaceCraft.navigationQuality.AVERAGE, 6, 0, 10);
-	SpaceCraft artemis = new SpaceCraft("Artemis N", SpaceCraft.shipAge.NEW, SpaceCraft.shipSpeed.FAST, SpaceCraft.shipQuality.AVERAGE, SpaceCraft.navigationQuality.AVERAGE, 10, 0, 10);
-	SpaceCraft orion = new SpaceCraft("New Orion", SpaceCraft.shipAge.NEW, SpaceCraft.shipSpeed.FAST, SpaceCraft.shipQuality.OUTSTANDING, SpaceCraft.navigationQuality.OUTSTANDING, 12, 0, 10);
+	// "name", shipAge, shipSpeed, shipQuality, navigationQuality, crewCapacity, cost, health, fuelTankSize
+	SpaceCraft saturnV = new SpaceCraft("Saturn V", SpaceCraft.shipAge.VERY_OLD, SpaceCraft.shipSpeed.SLOW, SpaceCraft.shipQuality.POOR, SpaceCraft.navigationQuality.POOR, 3, 0, 10, SpaceCraft.fuelTankSize.SMALL);
+	SpaceCraft atlas = new SpaceCraft("Atlas", SpaceCraft.shipAge.OLD, SpaceCraft.shipSpeed.SLOW, SpaceCraft.shipQuality.POOR, SpaceCraft.navigationQuality.POOR, 4, 0, 10, SpaceCraft.fuelTankSize.SMALL);
+	SpaceCraft shepard = new SpaceCraft("New Shepard XC", SpaceCraft.shipAge.AVERAGE, SpaceCraft.shipSpeed.AVERAGE, SpaceCraft.shipQuality.AVERAGE, SpaceCraft.navigationQuality.AVERAGE, 6, 0, 10, SpaceCraft.fuelTankSize.MEDIUM);
+	SpaceCraft artemis = new SpaceCraft("Artemis N", SpaceCraft.shipAge.NEW, SpaceCraft.shipSpeed.FAST, SpaceCraft.shipQuality.AVERAGE, SpaceCraft.navigationQuality.AVERAGE, 10, 0, 10, SpaceCraft.fuelTankSize.LARGE);
+	SpaceCraft orion = new SpaceCraft("New Orion", SpaceCraft.shipAge.NEW, SpaceCraft.shipSpeed.FAST, SpaceCraft.shipQuality.OUTSTANDING, SpaceCraft.navigationQuality.OUTSTANDING, 12, 0, 10, SpaceCraft.fuelTankSize.LARGE);
 	SpaceCraft[] earthCraft = {saturnV, atlas, shepard, artemis, orion};
 
 	public void printAllCraftSpecs(){
@@ -36,7 +37,7 @@ class TextBlocks {
 			case 5:
 				selectedCraft = orion;
 				break;
-			case 6:
+			default:
 				selectedCraft = shepard;
 				break;
 		}
@@ -113,7 +114,7 @@ class TextBlocks {
 	}
 
 	public void purchaseWaterDialogue() {
-		ui.print("The average person needs 1 liter of water a day to stay well hydrated.\n\nHow many liters of water would you like? ");
+		ui.print("The average person needs 2.5 liters of water a day to stay well hydrated.\n\nHow many liters of water would you like? ");
 	}
 
 	public void purchaseFuelDialogue() {

@@ -45,6 +45,8 @@ class Main {
 				userChoice2 = keyboard.nextInt();
 				if (userChoice2 > canHire) {
 					ui.println("I'm sorry. You can't hire that many.");
+				} else if (userChoice2 < 1) {
+					ui.println("I'm sorry. You can't hire that number.");
 				} else {
 					crew1.modifyCrew((userChoice-1), userChoice2);
 				}
@@ -68,8 +70,8 @@ class Main {
 		food = new Supplies.Food(Supplies.Food.foodRationSize.FILLING, keyboard.nextInt());
 		text.purchaseWaterDialogue();
 		water = new Supplies.Water(Supplies.Water.waterRationSize.HYDRATED, keyboard.nextInt());
-		text.purchaseFuelDialogue();
-		fuel = new Supplies.Fuel(Supplies.Fuel.fuelTankSize.MEDIUM, keyboard.nextInt());
+		//text.purchaseFuelDialogue();
+		//fuel = new Supplies.Fuel(Supplies.Fuel.fuelTankSize.MEDIUM, keyboard.nextInt());
 
 
 		// Launch Sequence
@@ -104,8 +106,6 @@ class Main {
 		userChoice2 = 0;
 		boolean isAlive = true;	// player state
 
-		supplies.displaySupplies(food, water, fuel);
-
-
+		
   }
 }

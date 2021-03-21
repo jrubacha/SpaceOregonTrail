@@ -55,7 +55,6 @@ class Weather {
 		} else if (diceRoll < sumChance) {
 			launchStatus = false;
 		}
-		ui.println("cloud: "+ cloudChance + "rain: " + rainChance + "wind: " + windChance + "Dice: " + diceRoll);
 		return launchStatus;
 		}
 }

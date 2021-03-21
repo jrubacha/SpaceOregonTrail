@@ -1,7 +1,4 @@
 class Supplies {
-	private int food, water, fuel, spareParts, spaceSuits;
-	private int[] suppliesArray = {food, water, fuel, spareParts, spaceSuits};
-	private String[] suppliesNames = {"Food", "Water", "Fuel", "Spare Parts", "Space Suits"};
 	UserInterface ui = new UserInterface();
 	availableSupplies supplyType;
 
@@ -45,28 +42,13 @@ class Supplies {
 		}
 	}
 
-	public void displaySupplies(Food food, Water water, Fuel fuel) {
+	public void displaySupplies(Food food, Water water) {
 		ui.println("Food: " + food.checkFoodSupply());
 		ui.println("Water: " + water.checkWaterSupply());
-		ui.println("Fuel: " + fuel.checkFuelSupply());
+		//ui.println("Fuel: " + fuel.checkFuelSupply());
 		//ui.println("Money: " + money.checkMoneySupply());
 	}
 
-	// Spart Parts Methods
-	public void modifySpareParts(int sparePartsMod){
-		spareParts = spareParts + sparePartsMod;
-	}
-	public int getSparePartsValue(){
-		return spareParts;
-	}
-
-	// Space Suit Methods
-	public void modifySpaceSuits(int spaceSuitsMod){
-		spaceSuits = spaceSuits + spaceSuitsMod;
-	}
-	public int getSpaceSuitsValue() {
-		return spaceSuits;
-	}
 
 
 	public static class Money extends Supplies {
@@ -82,7 +64,7 @@ class Supplies {
 
 	public static class Food extends Supplies {
 		foodRationSize rationSize;
-		static int foodQuantity;
+		public static int foodQuantity;
 		public static enum foodRationSize {
 			FILLING,
 			MEAGER,
@@ -107,6 +89,17 @@ class Supplies {
 		public String checkFoodRationSize(){
 			String ration = rationSize.toString();
 			return ration;
+		}
+		public void eatFood(foodRationSize rationSize, int crewSize) {
+			int dailyConsumable = 1;
+			if (rationSize == foodRationSize.BARE_BONES) {
+				dailyConsumable = 1;
+			} else if (rationSize == foodRationSize.MEAGER) {
+				dailyConsumable = 2;
+			} else {
+				dailyConsumable = 3;
+			}
+			foodQuantity = foodQuantity - dailyConsumable * crewSize;
 		}
 	}
 

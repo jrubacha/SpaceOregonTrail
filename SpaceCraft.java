@@ -6,6 +6,7 @@ class SpaceCraft {
 	shipQuality shipQual;
 	shipAge age;
 	shipSpeed speed;
+	fuelTankSize tankSize;
 
 	public static enum shipSpeed {
 		SLOW,
@@ -34,7 +35,7 @@ class SpaceCraft {
 		LARGE
 	}
 
-	public SpaceCraft(String name, shipAge age, shipSpeed speed, shipQuality shipQual, navigationQuality navQual, int capacity, int cost, int health) {
+	public SpaceCraft(String name, shipAge age, shipSpeed speed, shipQuality shipQual, navigationQuality navQual, int capacity, int cost, int health, fuelTankSize tankSize) {
 		this.name = name;
 		this.age = age;
 		this.speed = speed;
@@ -43,6 +44,7 @@ class SpaceCraft {
 		this.capacity = capacity;
 		this.cost = cost;
 		this.health = health;
+		this.tankSize = tankSize;
 	}
 	public String getName() {
 		return name;
@@ -80,5 +82,11 @@ class SpaceCraft {
 		ui.println("Condition: " + shipQual);
 		ui.println("Speed: " + speed);
 		ui.println("= = = = = = = = =");
+	}
+
+	public class SaturnV extends SpaceCraft {
+		public SaturnV() {
+		 	super("Saturn V", shipAge.VERY_OLD, shipSpeed.SLOW, shipQuality.POOR, navigationQuality.POOR, 3, cost, health, fuelTankSize.SMALL);
+		}
 	}
 }
