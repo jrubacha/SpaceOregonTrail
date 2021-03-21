@@ -28,6 +28,11 @@ class SpaceCraft {
 		AVERAGE,
 		NEW
 	}
+	public static enum fuelTankSize {
+		SMALL,
+		MEDIUM,
+		LARGE
+	}
 
 	public SpaceCraft(String name, shipAge age, shipSpeed speed, shipQuality shipQual, navigationQuality navQual, int capacity, int cost, int health) {
 		this.name = name;

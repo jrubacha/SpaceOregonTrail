@@ -45,6 +45,13 @@ class Supplies {
 		}
 	}
 
+	public void displaySupplies(Food food, Water water, Fuel fuel) {
+		ui.println("Food: " + food.checkFoodSupply());
+		ui.println("Water: " + water.checkWaterSupply());
+		ui.println("Fuel: " + fuel.checkFuelSupply());
+		//ui.println("Money: " + money.checkMoneySupply());
+	}
+
 	// Spart Parts Methods
 	public void modifySpareParts(int sparePartsMod){
 		spareParts = spareParts + sparePartsMod;
@@ -61,12 +68,6 @@ class Supplies {
 		return spaceSuits;
 	}
 
-	// All Supplies Methods
-	public void printSuppliesQuantities() {
-		for(int i=0; i<suppliesArray.length; i++) {
-			ui.println(suppliesArray[i] + " " + suppliesNames[i]);
-		}
-	}
 
 	public static class Money extends Supplies {
 		static int amountOfMoney;

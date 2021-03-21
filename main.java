@@ -68,6 +68,8 @@ class Main {
 		food = new Supplies.Food(Supplies.Food.foodRationSize.FILLING, keyboard.nextInt());
 		text.purchaseWaterDialogue();
 		water = new Supplies.Water(Supplies.Water.waterRationSize.HYDRATED, keyboard.nextInt());
+		text.purchaseFuelDialogue();
+		fuel = new Supplies.Fuel(Supplies.Fuel.fuelTankSize.MEDIUM, keyboard.nextInt());
 
 
 		// Launch Sequence
@@ -102,6 +104,7 @@ class Main {
 		userChoice2 = 0;
 		boolean isAlive = true;	// player state
 
+		supplies.displaySupplies(food, water, fuel);
 
 
   }

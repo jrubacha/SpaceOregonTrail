@@ -117,6 +117,6 @@ class TextBlocks {
 	}
 
 	public void purchaseFuelDialogue() {
-		ui.print("");
+		ui.print("Your tank can hold X pounds of fuel. You currently have Y pounds. How many would you like to purchase? ");
 	}
 }
