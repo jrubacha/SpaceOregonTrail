@@ -66,7 +66,8 @@ class Main {
 		text.printFirstSupplyPurchase();
 		text.purchaseFoodDialogue();
 		food = new Supplies.Food(Supplies.Food.foodRationSize.FILLING, keyboard.nextInt());
-
+		text.purchaseWaterDialogue();
+		water = new Supplies.Water(Supplies.Water.waterRationSize.HYDRATED, keyboard.nextInt());
 
 
 		// Launch Sequence

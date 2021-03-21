@@ -52,7 +52,7 @@ class TextBlocks {
 	}
 
 	public void printCrewPrompt() {
-		ui.println("Thanks for selecting your ship. Your next step will be to select your crew. Make sure you bring along enough people for your journey. If you find you need more hands later on, you can always pick up someone from the Moon Base, Mars Colony I, or the Inner Belt Station.\nYou can up to as many people will fit on your ship. Make sure to consider the occupations of your crew members carefully. A well-balanced crew likely will perform better than one that is not.");
+		ui.println("Thanks for selecting your ship. Your next step will be to select your crew. Make sure you bring along enough people for your journey. If you find you need more hands later on, you can always pick up someone from the Moon Base, Mars Colony I, or the Inner Belt Station.\nYou can select up to as many people will fit on your ship. Make sure to consider the occupations of your crew members carefully. A well-balanced crew likely will perform better than one that is not.");
 	}
 
 	public void printCrewOptions() {
@@ -110,5 +110,13 @@ class TextBlocks {
 	public void pressEnter(){
 		ui.print("\n< Press ENTER to continue >");
 		keyboard.nextLine();
+	}
+
+	public void purchaseWaterDialogue() {
+		ui.print("The average person needs 1 liter of water a day to stay well hydrated.\n\nHow many liters of water would you like? ");
+	}
+
+	public void purchaseFuelDialogue() {
+		ui.print("");
 	}
 }
